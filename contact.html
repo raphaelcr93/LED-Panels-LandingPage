@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en-AU">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Register interest for an OpenAir Pixels outdoor LED screen package and request an early estimate.">
+  <title>Contact | OpenAir Pixels</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body data-page="contact">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <header class="site-header" data-header>
+    <div class="container header-inner">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span>OpenAir Pixels</span></a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="primary-navigation" aria-label="Open menu"><span></span><span></span><span></span></button>
+      <nav class="primary-nav" id="primary-navigation" aria-label="Primary navigation">
+        <a href="index.html" data-nav="home">Home</a>
+        <a href="packages.html" data-nav="packages">Packages</a>
+        <a href="guide.html" data-nav="guide">Buyer Guide</a>
+        <a href="how-it-works.html" data-nav="how-it-works">How It Works</a>
+        <a href="contact.html" data-nav="contact">Contact</a>
+      </nav>
+      <a class="button button-small header-cta" href="contact.html">Get an Early Estimate</a>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="page-hero section">
+      <div class="container form-layout">
+        <div class="form-intro">
+          <p class="eyebrow">Get an early estimate</p>
+          <h1>Tell us about your backyard screen idea.</h1>
+          <p class="hero-lede">OpenAir Pixels is taking expressions of interest while the first outdoor LED screen packages are prepared for launch in Australia.</p>
+          <div class="fallback-card">
+            <strong>Prefer email?</strong>
+            <p>Send the property location, intended use and rough budget.</p>
+            <a id="mailto-fallback" href="mailto:openair.pixels@outlook.com">openair.pixels@outlook.com</a>
+          </div>
+        </div>
+
+        <form class="lead-form" id="contact-form" method="POST" action="https://formsubmit.co/openair.pixels@outlook.com">
+          <input type="hidden" name="_subject" value="New OpenAir Pixels Expression of Interest">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="https://raphaelcr93.github.io/LED-Panels-LandingPage/thank-you.html">
+          <input type="hidden" name="lead_source" value="OpenAir Pixels static website">
+
+          <div class="form-grid">
+            <div class="field"><label for="full-name">Full name</label><input id="full-name" name="full_name" type="text" autocomplete="name" required></div>
+            <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+            <div class="field"><label for="phone">Phone</label><input id="phone" name="phone" type="tel" autocomplete="tel" required></div>
+            <div class="field"><label for="suburb">Suburb or city</label><input id="suburb" name="suburb_city" type="text" autocomplete="address-level2" required></div>
+            <div class="field">
+              <label for="state">State</label>
+              <select id="state" name="state" required>
+                <option value="">Select state</option><option>ACT</option><option>NSW</option><option>NT</option><option>QLD</option><option>SA</option><option>TAS</option><option>VIC</option><option>WA</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="property-type">Type of property</label>
+              <select id="property-type" name="property_type" required>
+                <option value="">Select property type</option><option>Home</option><option>Townhouse</option><option>Pool area</option><option>Patio or alfresco</option><option>Airbnb or short-stay</option><option>Other</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="package-interest">Package interest</label>
+              <select id="package-interest" name="package_interest" required>
+                <option value="">Select package</option><option>OpenAir Compact</option><option>OpenAir Plus</option><option>OpenAir Max</option><option>Custom XL</option><option>Not sure yet</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="budget">Approximate budget</label>
+              <select id="budget" name="approximate_budget" required>
+                <option value="">Select budget</option><option>Under $20k</option><option>$20k to $35k</option><option>$35k to $60k</option><option>$60k+</option>
+              </select>
+            </div>
+            <div class="field field-full">
+              <label for="main-interest">Main interest</label>
+              <select id="main-interest" name="main_interest" required>
+                <option value="">Select main interest</option><option>Sport</option><option>Movies</option><option>Gaming</option><option>Poolside entertainment</option><option>BBQ or patio viewing</option><option>Airbnb or short-stay upgrade</option><option>Other</option>
+              </select>
+            </div>
+            <div class="field field-full"><label for="message">Message</label><textarea id="message" name="message" rows="5" required></textarea></div>
+          </div>
+
+          <p class="privacy-note">We'll only use your details to respond to your enquiry. No spam.</p>
+          <div class="form-actions">
+            <button class="button" type="submit" data-submit-button>Submit early enquiry</button>
+            <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"></span><span>OpenAir Pixels</span></a>
+      <p>Outdoor LED screen packages for Australian backyards. Launching soon.</p>
+      <a href="mailto:openair.pixels@outlook.com">openair.pixels@outlook.com</a>
+    </div>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
