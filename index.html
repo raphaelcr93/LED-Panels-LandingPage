@@ -9,10 +9,15 @@
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
+  <div class="cursor-tray" aria-hidden="true">
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+    <span></span><span></span><span></span><span></span><span></span><span></span>
+  </div>
 
   <header class="site-header" data-header>
     <div class="container header-inner">
-      <a class="brand" href="#top" aria-label="OpenAir Pixels home">
+      <a class="brand" href="index.html" aria-label="OpenAir Pixels home">
         <span class="brand-mark" aria-hidden="true"></span>
         <span>OpenAir Pixels</span>
       </a>
@@ -25,9 +30,10 @@
 
       <nav class="primary-nav" id="primary-navigation" aria-label="Primary navigation">
         <a href="#experience">Experience</a>
-        <a href="#sport">Sport</a>
+        <a href="backyard-sports-wall.html">Sport</a>
         <a href="#packages">Packages</a>
         <a href="#why-led">Why LED</a>
+        <a href="#differentials">Differentials</a>
         <a href="#faq">FAQ</a>
         <a href="#register">Register Interest</a>
       </nav>
@@ -38,6 +44,7 @@
 
   <main id="main">
     <section class="hero section" id="top" aria-labelledby="hero-title">
+      <canvas class="pixel-canvas" id="pixel-canvas" aria-hidden="true"></canvas>
       <div class="container hero-grid">
         <div class="hero-copy">
           <div class="eyebrow">Launching soon in Australia</div>
@@ -61,18 +68,25 @@
             <li>Custom installed</li>
             <li>Premium backyard upgrade</li>
           </ul>
+
+          <div class="hero-meta" aria-label="Launch details">
+            <span><strong>Residential</strong> first concept</span>
+            <span><strong>Australia</strong> pre-launch validation</span>
+            <span><strong>Built around</strong> site conditions</span>
+          </div>
         </div>
 
-        <div class="hero-visual" aria-label="Abstract concept preview of an outdoor LED wall">
-          <div class="hero-screen">
+        <div class="hero-visual hero-visual-premium" aria-label="Concept preview of an outdoor LED wall in a premium backyard">
+          <div class="hero-beam" aria-hidden="true"></div>
+          <figure class="hero-photo">
+            <img src="assets/hero-backyard-led-wall.png" alt="Concept preview of a luxury Australian backyard with a pool, alfresco kitchen and outdoor LED wall" width="1536" height="1024">
             <span class="screen-label">Concept preview</span>
             <div class="screen-content">
-              <span class="score-tag">LIVE</span>
-              <span class="fixture">Origin Night</span>
-              <span class="screen-title">Backyard Sport</span>
+              <span class="score-tag">PRE-LAUNCH</span>
+              <span class="fixture">Residential outdoor LED concept</span>
+              <span class="screen-title">Open-air luxury</span>
             </div>
-          </div>
-          <div class="pool-line" aria-hidden="true"></div>
+          </figure>
           <div class="patio-card">
             <span>Pool</span>
             <strong>Patio</strong>
@@ -82,19 +96,19 @@
       </div>
     </section>
 
-    <section class="section compact-section" aria-label="Positioning highlights">
+    <section class="section compact-section" aria-label="Positioning highlights" data-reveal>
       <div class="container signal-grid">
-        <article class="signal-card">
+        <article class="signal-card premium-hover" data-tilt>
           <span class="signal-number">01</span>
           <h2>Residential-first</h2>
           <p>Designed around homes, patios, pergolas, pools and outdoor entertaining spaces rather than shopfront signage or temporary event hire.</p>
         </article>
-        <article class="signal-card">
+        <article class="signal-card premium-hover" data-tilt>
           <span class="signal-number">02</span>
           <h2>Architectural feel</h2>
           <p>Specified as part of the space, with attention to viewing position, structure, finish, access and neighbour impact.</p>
         </article>
-        <article class="signal-card">
+        <article class="signal-card premium-hover" data-tilt>
           <span class="signal-number">03</span>
           <h2>Pre-launch validation</h2>
           <p>OpenAir Pixels is taking expressions of interest to shape the first Australian residential packages before launch.</p>
@@ -102,7 +116,45 @@
       </div>
     </section>
 
-    <section class="section" id="experience" aria-labelledby="experience-title">
+    <section class="section idea-section" aria-labelledby="ideas-title" data-reveal>
+      <div class="container section-heading">
+        <div class="eyebrow">Explore the idea</div>
+        <h2 id="ideas-title">Separate concept pages for serious buyers.</h2>
+        <p>OpenAir Pixels now has deeper pages for the key residential use cases, so homeowners and project partners can understand what each package is trying to solve before they enquire.</p>
+      </div>
+
+      <div class="container idea-grid">
+        <a class="idea-card premium-hover" href="outdoor-led-walls.html" data-tilt>
+          <span class="idea-kicker">Guide</span>
+          <h3>Outdoor LED Walls</h3>
+          <p>What they are, where they fit, and what needs to be considered before a residential installation.</p>
+          <span class="text-link">Read the guide</span>
+        </a>
+
+        <a class="idea-card premium-hover" href="backyard-sports-wall.html" data-tilt>
+          <span class="idea-kicker">Package</span>
+          <h3>Backyard Sports Wall</h3>
+          <p>A permanent big-game screen zone for patios, pergolas, BBQ areas and family homes.</p>
+          <span class="text-link">Explore sport</span>
+        </a>
+
+        <a class="idea-card premium-hover" href="poolside-cinema-wall.html" data-tilt>
+          <span class="idea-kicker">Package</span>
+          <h3>Poolside Cinema Wall</h3>
+          <p>A brighter, more immersive open-air entertainment concept for pools and alfresco spaces.</p>
+          <span class="text-link">Explore poolside</span>
+        </a>
+
+        <a class="idea-card premium-hover" href="short-stay-led-wall.html" data-tilt>
+          <span class="idea-kicker">Premium</span>
+          <h3>Short-Stay Feature Wall</h3>
+          <p>A distinctive outdoor amenity for luxury homes, Airbnb-style properties, builders and landscapers.</p>
+          <span class="text-link">Explore short-stay</span>
+        </a>
+      </div>
+    </section>
+
+    <section class="section" id="experience" aria-labelledby="experience-title" data-reveal>
       <div class="container split-layout">
         <div>
           <div class="eyebrow">The opportunity</div>
@@ -115,7 +167,7 @@
       </div>
     </section>
 
-    <section class="section sport-section" id="sport" aria-labelledby="sport-title">
+    <section class="section sport-section" id="sport" aria-labelledby="sport-title" data-reveal>
       <div class="container sport-grid">
         <div class="sport-copy">
           <div class="eyebrow">Australian sport nights</div>
@@ -145,7 +197,92 @@
       </div>
     </section>
 
-    <section class="section" id="packages" aria-labelledby="packages-title">
+    <section class="section differentials-section" id="differentials" aria-labelledby="differentials-title" data-reveal>
+      <div class="container differentials-grid">
+        <div class="differentials-copy">
+          <div class="eyebrow">Differentials</div>
+          <h2 id="differentials-title">Built like a premium outdoor room, not a screen purchase.</h2>
+          <p>For a high-value backyard upgrade, the experience has to feel considered before anyone talks about panels and controllers. OpenAir Pixels is being shaped around the full residential decision: architecture, safety, viewing comfort, servicing and the way Australians actually use outdoor spaces.</p>
+        </div>
+
+        <div class="differential-stack" aria-label="OpenAir Pixels differentiators">
+          <article class="differential-card premium-hover" data-tilt>
+            <span>01</span>
+            <h3>Residential discovery first</h3>
+            <p>We start with the backyard, the people using it and the viewing moments the screen needs to support.</p>
+          </article>
+          <article class="differential-card premium-hover" data-tilt>
+            <span>02</span>
+            <h3>Architectural screen planning</h3>
+            <p>Screen size, position, frame and structure should feel integrated with the patio, pool or alfresco area.</p>
+          </article>
+          <article class="differential-card premium-hover" data-tilt>
+            <span>03</span>
+            <h3>Brightness and neighbour review</h3>
+            <p>Outdoor brightness can be specified carefully, with attention to sun direction, evening use and nearby homes.</p>
+          </article>
+          <article class="differential-card premium-hover" data-tilt>
+            <span>04</span>
+            <h3>Pool and electrical planning</h3>
+            <p>Poolside projects need qualified review around electrical safety, splash zones, structure and service access.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section motion-section" id="motion" aria-labelledby="motion-title" data-reveal>
+      <div class="container section-heading">
+        <div class="eyebrow">Motion previews</div>
+        <h2 id="motion-title">Video-style concept reels without fake project footage.</h2>
+        <p>These animated previews are abstract simulations only. They help show the intended mood: sport outside, poolside cinema and architectural entertainment walls.</p>
+      </div>
+
+      <div class="container motion-grid">
+        <article class="motion-card premium-hover" data-tilt>
+          <div class="motion-frame sport-motion" role="img" aria-label="Animated concept preview for an alfresco sports wall">
+            <img src="assets/alfresco-sports-wall.png" alt="" loading="lazy" width="1536" height="1024">
+            <span class="motion-label">Concept motion</span>
+            <div class="motion-screen">
+              <strong>LIVE SPORT</strong>
+              <small>State of Origin outside</small>
+            </div>
+            <div class="motion-scan"></div>
+          </div>
+          <h3>Alfresco sport reel</h3>
+          <p>Designed to communicate the feeling of a permanent big-game wall beside the BBQ and outdoor table.</p>
+        </article>
+
+        <article class="motion-card premium-hover" data-tilt>
+          <div class="motion-frame pool-motion" role="img" aria-label="Animated concept preview for a poolside cinema wall">
+            <img src="assets/poolside-cinema-wall.png" alt="" loading="lazy" width="1536" height="1024">
+            <span class="motion-label">Concept motion</span>
+            <div class="motion-screen">
+              <strong>CINEMA NIGHT</strong>
+              <small>Pool, patio and open sky</small>
+            </div>
+            <div class="motion-scan"></div>
+          </div>
+          <h3>Poolside cinema reel</h3>
+          <p>A moving preview for open-air films, music events and summer night entertainment.</p>
+        </article>
+
+        <article class="motion-card premium-hover" data-tilt>
+          <div class="motion-frame luxury-motion" role="img" aria-label="Animated concept preview for a luxury short-stay LED feature wall">
+            <img src="assets/short-stay-feature-wall.png" alt="" loading="lazy" width="1536" height="1024">
+            <span class="motion-label">Concept motion</span>
+            <div class="motion-screen">
+              <strong>FEATURE WALL</strong>
+              <small>Luxury short-stay amenity</small>
+            </div>
+            <div class="motion-scan"></div>
+          </div>
+          <h3>Architectural feature reel</h3>
+          <p>A premium visual cue for builders, landscapers and short-stay owners considering a signature outdoor feature.</p>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="packages" aria-labelledby="packages-title" data-reveal>
       <div class="container section-heading">
         <div class="eyebrow">Validation packages</div>
         <h2 id="packages-title">Choose the backyard experience you want to test.</h2>
@@ -153,7 +290,7 @@
       </div>
 
       <div class="container package-grid">
-        <article class="package-card">
+        <article class="package-card premium-hover" data-tilt>
           <div class="package-topline">Patios, pergolas, BBQ areas and family homes</div>
           <h3>Backyard Sports Wall</h3>
           <p>For homeowners who want big-screen sport and casual viewing built into the main outdoor living area.</p>
@@ -165,7 +302,7 @@
           </ul>
         </article>
 
-        <article class="package-card featured-package">
+        <article class="package-card featured-package premium-hover" data-tilt>
           <div class="package-topline">Pools, alfresco kitchens and entertaining areas</div>
           <h3>Poolside Cinema Wall</h3>
           <p>For larger, brighter and more immersive entertainment zones where the screen becomes part of the evening.</p>
@@ -177,7 +314,7 @@
           </ul>
         </article>
 
-        <article class="package-card">
+        <article class="package-card premium-hover" data-tilt>
           <div class="package-topline">Luxury homes, builders, landscapers and short-stays</div>
           <h3>Architectural LED Feature Wall</h3>
           <p>For premium custom integration where the screen is part of the property design, guest experience or landscape plan.</p>
@@ -195,7 +332,7 @@
       </div>
     </section>
 
-    <section class="section alt-section" id="why-led" aria-labelledby="why-led-title">
+    <section class="section alt-section" id="why-led" aria-labelledby="why-led-title" data-reveal>
       <div class="container split-layout">
         <div>
           <div class="eyebrow">Why LED</div>
@@ -233,16 +370,17 @@
       </div>
     </section>
 
-    <section class="section" aria-labelledby="concepts-title">
+    <section class="section" aria-labelledby="concepts-title" data-reveal>
       <div class="container section-heading">
         <div class="eyebrow">Visual concepts</div>
         <h2 id="concepts-title">Concept previews for the spaces OpenAir Pixels is exploring.</h2>
-        <p>No completed installations are shown here. These are abstract visual previews to communicate possible use cases while the business validates demand.</p>
+        <p>No completed installations are shown here. These AI-generated concept previews communicate possible use cases while the business validates demand.</p>
       </div>
 
       <div class="container concept-grid">
-        <article class="concept-card">
-          <div class="concept-art pool-concept" aria-hidden="true">
+        <article class="concept-card premium-hover" data-tilt>
+          <div class="concept-art image-concept pool-concept">
+            <img src="assets/poolside-cinema-wall.png" alt="Concept preview of a poolside outdoor LED cinema wall in a modern Australian backyard" loading="lazy" width="1536" height="1024">
             <span>Concept preview</span>
           </div>
           <div class="concept-copy">
@@ -251,8 +389,9 @@
           </div>
         </article>
 
-        <article class="concept-card">
-          <div class="concept-art sport-concept" aria-hidden="true">
+        <article class="concept-card premium-hover" data-tilt>
+          <div class="concept-art image-concept sport-concept">
+            <img src="assets/alfresco-sports-wall.png" alt="Concept preview of an alfresco sports wall with outdoor kitchen and patio seating" loading="lazy" width="1536" height="1024">
             <span>Concept preview</span>
           </div>
           <div class="concept-copy">
@@ -261,8 +400,9 @@
           </div>
         </article>
 
-        <article class="concept-card">
-          <div class="concept-art luxury-concept" aria-hidden="true">
+        <article class="concept-card premium-hover" data-tilt>
+          <div class="concept-art image-concept luxury-concept">
+            <img src="assets/short-stay-feature-wall.png" alt="Concept preview of a luxury short-stay outdoor LED feature wall with pool and fire pit" loading="lazy" width="1536" height="1024">
             <span>Concept preview</span>
           </div>
           <div class="concept-copy">
@@ -273,7 +413,7 @@
       </div>
     </section>
 
-    <section class="section process-section" aria-labelledby="process-title">
+    <section class="section process-section" aria-labelledby="process-title" data-reveal>
       <div class="container section-heading">
         <div class="eyebrow">Process</div>
         <h2 id="process-title">From early interest to a realistic project conversation.</h2>
@@ -313,7 +453,7 @@
       </div>
     </section>
 
-    <section class="section" aria-labelledby="trust-title">
+    <section class="section" aria-labelledby="trust-title" data-reveal>
       <div class="container split-layout trust-layout">
         <div>
           <div class="eyebrow">Planning considerations</div>
@@ -334,7 +474,7 @@
       </div>
     </section>
 
-    <section class="section alt-section" id="faq" aria-labelledby="faq-title">
+    <section class="section alt-section" id="faq" aria-labelledby="faq-title" data-reveal>
       <div class="container section-heading">
         <div class="eyebrow">FAQ</div>
         <h2 id="faq-title">Questions homeowners ask first.</h2>
@@ -376,7 +516,7 @@
       </div>
     </section>
 
-    <section class="section final-cta" aria-labelledby="final-cta-title">
+    <section class="section final-cta" aria-labelledby="final-cta-title" data-reveal>
       <div class="container cta-panel">
         <div>
           <div class="eyebrow">Early access enquiries open</div>
@@ -387,7 +527,7 @@
       </div>
     </section>
 
-    <section class="section register-section" id="register" aria-labelledby="register-title">
+    <section class="section register-section" id="register" aria-labelledby="register-title" data-reveal>
       <div class="container form-layout">
         <div class="form-intro">
           <div class="eyebrow">Register interest</div>
@@ -396,13 +536,15 @@
           <div class="fallback-card">
             <strong>Prefer email?</strong>
             <p>Use the fallback link and include the property location, intended use and rough budget.</p>
-            <a id="mailto-fallback" href="mailto:hello@openairpixels.com.au">hello@openairpixels.com.au</a>
+            <a id="mailto-fallback" href="mailto:openair.pixels@outlook.com">openair.pixels@outlook.com</a>
           </div>
         </div>
 
-        <!-- Replace YOUR_FORM_ID with the real Formspree form ID before collecting live leads. -->
-        <form class="lead-form" id="lead-form" method="POST" action="https://formspree.io/f/YOUR_FORM_ID" novalidate>
+        <!-- Static email endpoint. First submission may require confirming openair.pixels@outlook.com with FormSubmit. Do not place SMTP credentials in frontend code. -->
+        <form class="lead-form" id="lead-form" method="POST" action="https://formsubmit.co/openair.pixels@outlook.com">
           <input type="hidden" name="lead_source" value="OpenAir Pixels landing page">
+          <input type="hidden" name="_subject" value="New OpenAir Pixels expression of interest">
+          <input type="hidden" name="_template" value="table">
 
           <div class="form-grid">
             <div class="field">
@@ -492,12 +634,12 @@
 
   <footer class="site-footer">
     <div class="container footer-inner">
-      <a class="brand" href="#top" aria-label="OpenAir Pixels home">
+      <a class="brand" href="index.html" aria-label="OpenAir Pixels home">
         <span class="brand-mark" aria-hidden="true"></span>
         <span>OpenAir Pixels</span>
       </a>
       <p>Premium outdoor LED walls for Australian backyards. Launching soon.</p>
-      <a href="mailto:hello@openairpixels.com.au">hello@openairpixels.com.au</a>
+      <a href="mailto:openair.pixels@outlook.com">openair.pixels@outlook.com</a>
     </div>
   </footer>
 
