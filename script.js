@@ -10,6 +10,7 @@
   const pixelCanvases = document.querySelectorAll(".pixel-canvas");
   const revealItems = document.querySelectorAll("[data-reveal]");
   const carousels = document.querySelectorAll("[data-carousel]");
+  const mediaImages = document.querySelectorAll(".media-picture img");
   const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
   const pointerFineQuery = window.matchMedia("(pointer: fine)");
 
@@ -403,6 +404,17 @@
       revealItems.forEach((item) => item.classList.add("is-visible"));
     }
   }
+
+  mediaImages.forEach((image) => {
+    const wrapper = image.closest(".concept-media");
+    if (wrapper) wrapper.classList.add("has-media-image");
+
+    const markFailed = () => {
+      if (wrapper) wrapper.classList.add("media-image-failed");
+    };
+    image.addEventListener("error", markFailed);
+    if (image.complete && image.naturalWidth === 0) markFailed();
+  });
 
   setActiveNavigation();
   initLedTrail();

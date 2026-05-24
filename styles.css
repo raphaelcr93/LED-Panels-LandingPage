@@ -334,6 +334,10 @@ th {
   font-size: 0.88rem;
 }
 
+.botcheck {
+  display: none;
+}
+
 .led-trail {
   position: fixed;
   inset: 0;
@@ -501,9 +505,46 @@ th {
   box-shadow: var(--shadow), var(--glow);
 }
 
+.media-picture {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: block;
+}
+
+.media-picture img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.media-picture::after {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  content: "";
+  background:
+    linear-gradient(180deg, rgba(5, 7, 11, 0.02), rgba(5, 7, 11, 0.34)),
+    radial-gradient(circle at 50% 0%, rgba(147, 241, 255, 0.14), transparent 34rem);
+}
+
+.media-image-failed .media-picture {
+  display: none;
+}
+
+.concept-media.has-media-image::before {
+  opacity: 0;
+}
+
+.concept-media.has-media-image.media-image-failed::before {
+  opacity: 0.2;
+}
+
 .concept-media::before {
   position: absolute;
   inset: 0;
+  z-index: 1;
   pointer-events: none;
   content: "";
   background-image: radial-gradient(circle, rgba(147, 241, 255, 0.54) 1px, transparent 1.8px);
@@ -516,6 +557,7 @@ th {
 .video-placeholder::after {
   position: absolute;
   inset: 0;
+  z-index: 1;
   pointer-events: none;
   content: "";
   background: linear-gradient(120deg, transparent 0%, rgba(147, 241, 255, 0.16) 45%, transparent 58%);
@@ -549,11 +591,77 @@ th {
   box-shadow: none;
 }
 
+[data-page="how-it-works"] .page-hero .concept-media,
+[data-page="how-it-works"] .compact-media {
+  min-height: 0;
+  aspect-ratio: 4 / 3;
+}
+
+[data-page="how-it-works"] .compact-media {
+  width: min(100%, 760px);
+  margin-top: 1.25rem;
+}
+
+[data-page="how-it-works"] .how-media-row {
+  align-items: center;
+  gap: clamp(1.25rem, 4vw, 3rem);
+}
+
+[data-page="how-it-works"] .how-media-row .compact-media {
+  width: 100%;
+  margin-top: 0;
+}
+
+[data-page="how-it-works"] .how-copy {
+  align-self: center;
+}
+
+[data-page="how-it-works"] .how-copy h2 {
+  margin-bottom: 1rem;
+}
+
+[data-page="how-it-works"] .how-copy p:last-child {
+  margin-bottom: 0;
+}
+
+[data-page="how-it-works"] .how-feature-grid {
+  margin-top: 1rem;
+}
+
+[data-page="how-it-works"] .section {
+  padding-block: 4rem;
+}
+
+[data-page="how-it-works"] .media-picture img {
+  object-fit: contain;
+  object-position: center;
+}
+
+[data-page="how-it-works"] .media-picture::after {
+  background:
+    linear-gradient(180deg, rgba(5, 7, 11, 0.01), rgba(5, 7, 11, 0.2)),
+    radial-gradient(circle at 50% 0%, rgba(147, 241, 255, 0.1), transparent 34rem);
+}
+
+[data-page="how-it-works"] .mock-screen {
+  right: 0.8rem;
+  bottom: 0.8rem;
+  left: auto;
+  width: min(260px, calc(100% - 1.6rem));
+  padding: 0.8rem;
+}
+
+[data-page="how-it-works"] .mock-screen strong {
+  max-width: 13ch;
+  font-size: 1.35rem;
+  line-height: 1;
+}
+
 .media-tag {
   position: absolute;
   top: 1rem;
   left: 1rem;
-  z-index: 2;
+  z-index: 3;
   padding: 0.42rem 0.58rem;
   color: var(--text);
   font-size: 0.72rem;
@@ -586,6 +694,11 @@ th {
     radial-gradient(circle at 30% 20%, rgba(147, 241, 255, 0.16), transparent 50%);
   border: 1px solid rgba(147, 241, 255, 0.22);
   border-radius: var(--radius);
+}
+
+.package-media {
+  min-height: 210px;
+  margin: -0.3rem -0.3rem 1rem;
 }
 
 .mock-screen span {
@@ -638,6 +751,10 @@ th {
 .process-list article,
 .note-panel {
   padding: 1.2rem;
+}
+
+.note-panel {
+  margin-top: 20px;
 }
 
 .signal-number,

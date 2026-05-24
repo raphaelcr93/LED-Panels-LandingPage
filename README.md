@@ -18,8 +18,8 @@ The site uses plain HTML, CSS and vanilla JavaScript only. There is no build ste
 - `packages.html` - package cards and comparison table
 - `guide.html` - practical buyer guide
 - `how-it-works.html` - educational package explainer
-- `contact.html` - FormSubmit expression of interest form
-- `thank-you.html` - FormSubmit redirect page
+- `contact.html` - Web3Forms expression of interest form
+- `thank-you.html` - Web3Forms redirect page
 - `styles.css` - shared visual system and responsive layout
 - `script.js` - mobile menu, active nav, same-page smooth scroll, form validation, loading state and mailto fallback
 
@@ -39,37 +39,37 @@ You can also serve the folder with any simple static server, but it is not requi
 
 Because all paths are relative and there is no build step, the page works on GitHub Pages as-is.
 
-## Connect FormSubmit
+## Connect Web3Forms
 
-The contact form posts to:
+The homepage form and contact page form post to:
 
 ```html
-https://formsubmit.co/openair.pixels@outlook.com
+https://api.web3forms.com/submit
 ```
 
-The first FormSubmit submission may require email confirmation before messages start forwarding.
+Current hidden fields in `index.html` and `contact.html`:
 
-Current hidden fields in `contact.html`:
-
-- `_subject = New OpenAir Pixels Expression of Interest`
-- `_template = table`
-- `_captcha = false`
-- `_next = https://raphaelcr93.github.io/LED-Panels-LandingPage/thank-you.html`
-- `lead_source = OpenAir Pixels static website`
+- `access_key = 81ef4d1c-cf3c-4e53-b86e-1385b343c070`
+- `subject = New OpenAir Pixels Expression of Interest`
+- `from_name = OpenAir Pixels website`
+- `redirect = https://raphaelcr93.github.io/LED-Panels-LandingPage/thank-you.html`
+- `botcheck` honeypot field
+- `lead_source = OpenAir Pixels landing page` in `index.html`
+- `lead_source = OpenAir Pixels static website` in `contact.html`
 
 After deploying:
 
 1. Submit one test enquiry.
-2. Confirm the activation email sent by FormSubmit to `openair.pixels@outlook.com`.
-3. Submit another test enquiry.
-4. Confirm the email arrives and redirects to `thank-you.html`.
+2. Confirm the message arrives at the email configured in Web3Forms.
+3. Confirm the browser redirects to `thank-you.html`.
 
 ## Change Business Details
 
 Change the email address in:
 
-- `contact.html` form action
-- `contact.html` hidden `_next` only if the GitHub Pages URL changes
+- Web3Forms dashboard for the access key
+- `index.html` and `contact.html` if the Web3Forms access key changes
+- `index.html` and `contact.html` hidden `redirect` only if the GitHub Pages URL changes
 - All `mailto:` links in the HTML pages
 - `script.js` mailto fallback generation
 - This README
@@ -87,30 +87,61 @@ Change package products in:
 - `contact.html` package-interest select field
 - The internal cost model below
 
-## Placeholder Media
+## Media Generation And Replacement
 
-The site uses reusable CSS media components:
+Generated and replacement media should be saved in:
+
+```text
+assets/media/
+```
+
+Prompt sources:
+
+- `assets/media/IMAGE_GENERATION_PROMPTS.md`
+- `assets/media/prompts.json`
+
+Current required filenames:
+
+- `hero-openair-plus-poolside.webp`
+- `openair-compact-patio.webp`
+- `openair-plus-poolside.webp`
+- `openair-max-large-backyard.webp`
+- `backyard-sports-night.webp`
+- `outdoor-gaming-session.webp`
+- `modular-led-panel-closeup.webp`
+- `ip65-weather-cabinet.webp`
+- `controller-av-cabinet.webp`
+- `outdoor-audio-speakers.webp`
+- `metal-frame-installation.webp`
+- `led-wall-vs-projector.webp`
+
+Recommended image sizes:
+
+- 16:9 images: 1600 x 900 or larger
+- 4:3 detail images: 1200 x 900 or larger
+- Format: WebP for production
+
+To replace an image:
+
+1. Generate or source original/licensed media.
+2. Export as WebP using the same filename.
+3. Save it in `assets/media/`.
+4. Keep the same aspect ratio to avoid layout shift.
+5. Check that the image has no logos, real broadcasts, copyrighted game content, readable UI, fake certifications or watermarks.
+6. Keep concept images labelled honestly as concept previews until real completed project photos are available.
+
+The site uses reusable media components:
 
 - `image-placeholder`
 - `video-placeholder`
 - `concept-media`
 - `media-caption`
 - `media-tag`
+- `media-picture`
 
-Current media references are CSS background paths. If an asset does not exist, the CSS fallback still displays a polished abstract LED placeholder instead of a broken image.
+Images are loaded through `<picture>` elements with CSS fallback backgrounds underneath. If an image fails to load, JavaScript adds a fallback class so the polished abstract LED placeholder remains visible instead of a broken media frame.
 
-Suggested replacement media:
-
-- `assets/media/poolside-led-wall-concept.webp`
-- `assets/media/backyard-sports-night-concept.webp`
-- `assets/media/modular-led-panels-closeup.webp`
-- `assets/media/weather-rated-led-cabinet.webp`
-- `assets/media/controller-smart-home.webp`
-- `assets/media/outdoor-audio-speakers.webp`
-- `assets/media/gaming-on-outdoor-led-wall.webp`
-- `assets/media/installation-structure-concept.webp`
-
-AI-generated concept media can be used for pre-launch validation if it is clearly labelled as a concept preview and does not imply a completed installation. Do not use copyrighted photos or videos without permission.
+AI-generated concept media can be used for pre-launch validation if it is clearly labelled as a concept preview and does not imply a completed installation. Use only original or licensed media. Do not use copyrighted photos or videos without permission.
 
 ## Internal Package Cost Model
 
@@ -155,10 +186,10 @@ Do not publish these internal costs on the customer-facing website.
 ## Suggested Validation Steps
 
 - Buy the domain.
-- Confirm FormSubmit forwarding.
+- Confirm Web3Forms forwarding.
 - Add analytics.
 - Run Google and Meta ads.
 - Track package interest and quote requests.
 - Test Compact, Plus and Max pricing.
-- Replace placeholder media with approved concept media or real project photos later.
+- Replace concept media with real project photos later.
 - Speak with electricians and installers before taking deposits.
